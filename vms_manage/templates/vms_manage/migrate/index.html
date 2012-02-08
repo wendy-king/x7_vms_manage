@@ -1,0 +1,37 @@
+{% extends 'vms_manage/base.html' %}
+{% load i18n parse_date sizeformat %}
+{% block title %}Vms Migrate{% endblock %}
+
+
+{% block vms_manage_main %}
+
+<form action="" method="get" id="date_form">
+  <!-- {% csrf_token %} -->
+  <h3>{% trans "Select a month to query its usage" %}: </h3>
+  <div class="form-row">
+      Start: {{ dateform.date_start }}
+      End: {{ dateform.date_end }}
+    <input class="btn small" type="submit"/>
+  </div>
+</form>
+     
+    <div class='table_title wide'>
+      <h3>Instances</h3>
+    </div>
+
+    <table class="zebra-striped">
+      <tr id='headings'>
+        <th>{% trans "vm" %}</th>
+        <th>{% trans "Host" %}</th>
+        <th>{% trans "State" %}</th>
+      </tr>
+      <tbody class='main'>
+          <tr>
+              <td colspan=6></td>
+          </tr>
+      </tbody>
+    </table>
+
+   
+
+{% endblock %}
